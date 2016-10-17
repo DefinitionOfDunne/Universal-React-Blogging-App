@@ -1,0 +1,30 @@
+@import 'https://fonts.googleapis.com/css?family=Oxygen';
+
+body {
+	background-color: pink;
+	font-family: 'Oxygen', sans-serif;
+}
+h1 {
+	text-align: center;
+}
+
+.footer {
+	text-align: center;
+	position: absolute;
+	margin-top: 25rem;
+	width: 100%;
+	height: 4rem;
+	background: #a4eff5;
+}
+
+.single-post {
+	margin: 2rem auto;
+	width: 60%;
+}
+.single-post-title {
+	color: red;
+	font-size: 2rem;
+}
+.single-post-text {
+	color: black;
+}
