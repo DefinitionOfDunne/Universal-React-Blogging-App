@@ -15,7 +15,7 @@ This is a standard, reusable blogging application template written entirely in J
 * Add admin authentication with Redux and JOTs
 * Overhaul a nice little design
 
-# Future Goals
+## Future Goals
 * Add User authentication for commenting/liking posts
 
 
