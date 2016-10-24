@@ -4,18 +4,18 @@ import $ from 'jQuery';
 
 const EditorPage = React.createClass({
 	getInitialState () {
-		return { titleText: '', bodyText: ''};
+	  return { titleText: '', bodyText: ''};
 	},
 
   	_postPost: function () {
-    return $.ajax({
-      url: '/api/editor',
-      type: 'POST',
-      data: {
-        title: this.state.titleText,
-        text: this.state.bodyText
+    	  return $.ajax({
+      		url: '/api/editor',
+      		type: 'POST',
+      		data: {
+        		title: this.state.titleText,
+        		text: this.state.bodyText
       		}	
-		})
+	    })
 	},
 
 	updateTitleText(event){
