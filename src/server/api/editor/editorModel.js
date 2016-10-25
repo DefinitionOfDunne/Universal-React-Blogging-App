@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
+var expressJwt = require('express-jwt');
 
 var EditorSchema = new Schema({
   username: {
@@ -14,4 +17,4 @@ var EditorSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('editor', EditorSchema);
+module.exports = mongoose.model('Editor', EditorSchema);

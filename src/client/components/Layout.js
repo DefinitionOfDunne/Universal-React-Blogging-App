@@ -1,15 +1,21 @@
-const React = require('react');
-const Menu = require('./Menu');
-const Footer = require('./Footer');
-const Header = require('./Header');
+import React, { Component } from 'react';
+import HeaderTemplate from '../templates/HeaderTemplate';
+import FooterTemplate from '../templates/FooterTemplate';
 
-const Layout = (props) => (
-  <div className='app-container'>
-    <Menu classname='header-nav' />
-    {props.children}
-    <Footer />
-  </div>
-)
+class Layout extends Component {
+  render() {
+    return (
+      <div>
+      <HeaderTemplate logo="Welcome To This Hawt New Blog!" />
 
+      <div className="app-container">
+        {this.props.children}
+      </div>
 
-module.exports = Layout;
+      <FooterTemplate />
+      </div>
+    );
+  }
+}
+
+export default Layout;

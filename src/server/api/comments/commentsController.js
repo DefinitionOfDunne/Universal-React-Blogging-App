@@ -1,8 +1,7 @@
-var Post = require('../comments/commentModel');
-var _ = require('lodash');
-var logger = require('../../util/logger');
-var Comment = require('./commentModel');
-
+const Post = require('../comments/commentModel');
+const _ = require('lodash');
+const logger = require('../../config/logger');
+const Comment = require('./commentModel');
 
 
   exports.get = function(req, res) {
@@ -16,7 +15,7 @@ var Comment = require('./commentModel');
   };
 
   exports.post = function(req, res) {
-    var comment = new Comment({
+    const comment = new Comment({
       name: req.body.name,
       description: req.body.description,
     });

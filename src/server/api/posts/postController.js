@@ -1,6 +1,6 @@
-var Post = require('./postModel');
-var _ = require('lodash');
-var logger = require('../../util/logger');
+const Post = require('./postModel');
+const _ = require('lodash');
+const logger = require('../../config/logger');
 
 exports.params = function(req, res, next, id) {
   Post.findById(id)
@@ -29,14 +29,14 @@ exports.get = function(req, res, next) {
 };
 
 exports.getOne = function(req, res, next) {
-  var post = req.post;
+  const post = req.post;
   res.json(post);
 };
 
 exports.put = function(req, res, next) {
-  var post = req.post;
+  const post = req.post;
 
-  var update = req.body;
+  const update = req.body;
 
   _.merge(post, update);
 
@@ -50,7 +50,7 @@ exports.put = function(req, res, next) {
 };
 
 exports.post = function(req, res, next) {
-  var newpost = req.body;
+  const newpost = req.body;
   Post.create(newpost)
     .then(function(post) {
       res.json(post);

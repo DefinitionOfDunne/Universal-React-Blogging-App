@@ -1,11 +1,10 @@
-var router = require('express').Router();
-var logger = require('../../util/logger');
-var controller = require('./editorController');
+const router = require('express').Router();
+const controller = require('./editorController');
 
 router.param('id', controller.params);
 
 router.route('/')
-  .post(controller.post)
+	.post(controller.post)
 
 router.route('/:id')
   .put(controller.put)

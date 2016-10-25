@@ -1,5 +1,4 @@
 const React = require('react');
-const Header = require('./Header');
 import $ from 'jQuery';
 
 const EditorPage = React.createClass({
@@ -29,7 +28,6 @@ const EditorPage = React.createClass({
 	render(){
 		return(
   			<div>
-    			<Header title='Edit and Post Here Dude' />
     			<input 
     				value={this.state.titleText}
     				placeholder='Enter Title Here'

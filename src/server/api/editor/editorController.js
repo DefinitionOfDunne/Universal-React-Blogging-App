@@ -1,6 +1,6 @@
 var Post = require('../posts/postModel');
 var _ = require('lodash');
-var logger = require('../../util/logger');
+var logger = require('../../config/logger');
 
 exports.params = function(req, res, next, id) {
   Post.findById(id)
