@@ -7,14 +7,14 @@ const EditorPage = React.createClass({
 		return { titleText: '', bodyText: ''};
 	},
 
-  _postPost: function () {
-    return $.ajax({
-      url: '/api/editor',
-      type: 'POST',
-      data: {
-        title: this.state.titleText,
-        text: this.state.bodyText
-      }	
+	_postPost: function () {
+		return $.ajax({
+			url: '/api/editor',
+			type: 'POST',
+			data: {
+				title: this.state.titleText,
+				text: this.state.bodyText
+			}	
 		})
 	},
 
