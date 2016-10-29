@@ -4,7 +4,20 @@ import { Link } from 'react-router';
 
 class HeaderTemplate extends Component {
   renderLinks() {
-    if (this.props.authenticated) {
+    if (this.props.admin) {
+      return [
+        <li key={1 + 'header'}>
+          <Link to='/'>Home</Link>
+        </li>,
+        <li key={2 + 'header'}>
+          <Link to='admin-logout'>Logout</Link>
+        </li>,
+        <li key={3 + 'header'}>
+          <Link to='new-post'>New Post</Link>
+        </li>
+      ]
+    } 
+    else if (this.props.authenticated) {
       return [
         <li key={1 + 'header'}>
           <Link to='/'>Home</Link>
@@ -13,16 +26,14 @@ class HeaderTemplate extends Component {
           <Link to='logout'>Logout</Link>
         </li>,
         <li key={3 + 'header'}>
-          <Link to='content'>Content</Link>
+          <Link to='archive'>Archive</Link>
         </li>,
         <li key={4 + 'header'}>
-          <Link to='editor'>Editor</Link>
-        </li>,
-        <li key={5 + 'header'}>
           <Link to='profile'>Profile</Link>
         </li>
       ]
-    } else {
+    }  else {
+      
       return [
       
         <li key={1}>
@@ -35,7 +46,10 @@ class HeaderTemplate extends Component {
           <Link to='signup'>Sign Up</Link>
         </li>,
         <li key={4}>
-          <Link to='content'>Content</Link>
+          <Link to='archive'>Archive</Link>
+        </li>,
+        <li key={5}>
+        <Link to='editor'>Admin</Link>
         </li>
       ];
     }
@@ -70,7 +84,8 @@ class HeaderTemplate extends Component {
 
 function mapStateToProps(state) {
   return {
-    authenticated: state.auth.authenticated
+    authenticated: state.auth.authenticated,
+    admin: state.auth.admin
   };
 }
 

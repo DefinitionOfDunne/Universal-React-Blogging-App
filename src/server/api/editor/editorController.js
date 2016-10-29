@@ -66,10 +66,10 @@ exports.login = function(req, res, next) {
 
 exports.register = function(req, res, next) {
 
-  const editorname = req.body.username;
+  const username = req.body.username;
   const password = req.body.password;
 
-  if (!editorname) {
+  if (!username) {
     return res.status(422).send({ error: 'You must enter an editorname.'});
   }
 
@@ -77,7 +77,7 @@ exports.register = function(req, res, next) {
     return res.status(422).send({ error: 'You must enter a password.' });
   }
 
-  Editor.findOne({ editorname: editorname }, function(err, existingUser) {
+  Editor.findOne({ username: username }, function(err, existingUser) {
       if (err) { return next(err); }
 
       if (existingUser) {
@@ -85,18 +85,18 @@ exports.register = function(req, res, next) {
       }
 
       let editor = new Editor({
-        editorname: editorname,
+        username: username,
         password: password
       });
 
       editor.save(function(err, editor) {
         if (err) { return next(err); }
 
-        let editorInfo = setUserInfo(editor);
+        let userInfo = setUserInfo(editor);
 
         res.status(201).json({
-          token: 'JWT ' + generateToken(editorInfo),
-          editor: editorInfo
+          token: 'JWT ' + generateToken(userInfo),
+          editor: userInfo
         });
       });
   });

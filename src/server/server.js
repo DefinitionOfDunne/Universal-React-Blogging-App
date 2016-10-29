@@ -3,16 +3,20 @@ var mongoose = require('mongoose');
 var app = express();
 var api = require('./api/api');
 var logger = require('./config/logger');
+require('dotenv').config();
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/final-blog');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('DB connected!');
-}); 
+
+app.set('port', (process.env.PORT || 8080));
+
+var connection = mongoose.connect(process.env.MLAB_URI);
+mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
+mongoose.connection.once('open', function() {
+    console.info('Connected to database!');
+});
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Request-Headers", "*");
   res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header("Access-Control-Allow-Credentials", "true");

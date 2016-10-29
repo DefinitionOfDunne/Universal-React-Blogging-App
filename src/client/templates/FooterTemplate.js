@@ -4,25 +4,52 @@ import { Link } from 'react-router';
 
 class FooterTemplate extends Component {
   renderLinks() {
-    if (this.props.authenticated) {
+    if (this.props.admin) {
       return [
-        <li key={1}>
-          <Link to="/">Home</Link>
+        <li key={1 + 'header'}>
+          <Link to='/'>Home</Link>
         </li>,
-        <li key={2}>
-          <Link to="logout">Logout</Link>
+        <li key={2 + 'header'}>
+          <Link to='admin-logout'>Logout</Link>
+        </li>,
+        <li key={3 + 'header'}>
+          <Link to='new-post'>New Post</Link>
         </li>
-      ];
-    } else {
+      ]
+    } 
+    else if (this.props.authenticated) {
       return [
+        <li key={1 + 'header'}>
+          <Link to='/'>Home</Link>
+        </li>,
+        <li key={2 + 'header'}>
+          <Link to='logout'>Logout</Link>
+        </li>,
+        <li key={3 + 'header'}>
+          <Link to='archive'>Archive</Link>
+        </li>,
+        <li key={4 + 'header'}>
+          <Link to='profile'>Profile</Link>
+        </li>
+      ]
+    }  else {
+      
+      return [
+      
         <li key={1}>
-          <Link to="/">Home</Link>
+          <Link to='/'>Home</Link>
         </li>,
         <li key={2}>
-          <Link to="login">Login</Link>
+          <Link to='login'>Login</Link>
         </li>,
         <li key={3}>
-          <Link to="register">Register</Link>
+          <Link to='signup'>Sign Up</Link>
+        </li>,
+        <li key={4}>
+          <Link to='archive'>Archive</Link>
+        </li>,
+        <li key={5}>
+        <Link to='editor'>Admin</Link>
         </li>
       ];
     }

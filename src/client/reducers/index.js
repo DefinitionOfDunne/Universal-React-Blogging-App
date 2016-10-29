@@ -4,8 +4,8 @@ import authReducer from './auth';
 import userReducer from './user';
 
 const rootReducer = combineReducers({
-  form: formReducer,
   auth: authReducer,
+  form: formReducer,
   user: userReducer
 });
 
