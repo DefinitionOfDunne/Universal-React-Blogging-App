@@ -3,6 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 import RequireAuth from './components/RequireAuth';
 import Layout from './components/Layout';
 import Landing from './components/Landing';
+import OnePost from './components/OnePost';
 import About from './components/About';
 import Archive from './components/Archive';
 import EditorPage from './components/EditorPage';
@@ -27,6 +28,7 @@ export default (
     <Route path='profile' component={UserProfile} />
     <Route path='editor' component={EditorLogin} />
     <Route path='new-post' component={EditorPage} />
+    <Route path='archive/:id' component={OnePost} />
     <Route path='*' component={NotFound} />
   </Route>
 );

@@ -5,10 +5,9 @@ var api = require('./api/api');
 var logger = require('./config/logger');
 require('dotenv').config();
 
-
 app.set('port', (process.env.PORT || 8080));
 
-var connection = mongoose.connect(process.env.MLAB_URI);
+var connection = mongoose.connect(process.env.MLAB_URI || 'mongodb://localhost/final-blog');
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', function() {
     console.info('Connected to database!');

@@ -1,5 +1,4 @@
-const Post = require('../comments/commentModel');
-const _ = require('lodash');
+;const _ = require('lodash');
 const logger = require('../../config/logger');
 const Comment = require('./commentModel');
 

@@ -1,4 +1,3 @@
-
 import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, AUTH_ADMIN, UNAUTH_ADMIN } from '../actions/types';
 
 const INITIAL_STATE = { error: '', message: '', content: '', authenticated: false, admin: false };
