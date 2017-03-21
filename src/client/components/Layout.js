@@ -6,7 +6,7 @@ class Layout extends Component {
   render() {
     return (
       <div>
-      <HeaderTemplate logo="Welcome To This Hawt New Blog!" />
+      <HeaderTemplate logo="Dylan A. Dunne Tech Blog" />
 
       <div className="app-container">
         {this.props.children}

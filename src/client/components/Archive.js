@@ -1,14 +1,14 @@
 const React = require('react');
 import Posts from './Posts';
 
-const Archive = React.createClass({
-  render () {
+class Archive extends React.Component {
+  render() {
    return (
-  <div>
-    <Posts />
+  <div> 
+  	<Posts /> 
   </div>
     )
   }
-});
+};
 
 module.exports = Archive; 

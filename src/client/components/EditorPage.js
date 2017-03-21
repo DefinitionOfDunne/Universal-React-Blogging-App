@@ -3,7 +3,7 @@ import $ from 'jQuery';
 
 const EditorPage = React.createClass({
 	getInitialState () {
-		return { titleText: '', bodyText: ''};
+		return { titleText: '', dateText: '', authorText: '', bodyText: ''};
 	},
 
 	_postPost: function () {
@@ -12,6 +12,8 @@ const EditorPage = React.createClass({
 			type: 'POST',
 			data: {
 				title: this.state.titleText,
+				date: this.state.dateText,
+				author: this.state.authorText,
 				text: this.state.bodyText
 			}	
 		})
@@ -20,7 +22,12 @@ const EditorPage = React.createClass({
 	updateTitleText(event){
 		this.setState({titleText: event.target.value});
 	},
-
+	updateDateText(event){
+		this.setState({dateText: event.target.value});
+	},	
+	updateAuthorText(event){
+		this.setState({authorText: event.target.value});
+	},
 	updateBodyText(event){
 		this.setState({bodyText: event.target.value});
 	},
@@ -35,6 +42,18 @@ const EditorPage = React.createClass({
     				type='text'
     				onChange={this.updateTitleText} 
     			/>
+    			<input 
+    				value={this.state.authorText}
+    				placeholder='Author Name'
+    				type='text'
+    				onChange={this.updateAuthorText} 
+    			/>
+    			<input 
+    				value={this.state.dateText}
+    				placeholder='Date'
+    				type='text'
+    				onChange={this.updateDateText} 
+    			/>    			
     			<textarea
     				value={this.state.bodyText}
     				placeholder='Enter Post Body Here' 
@@ -50,15 +69,3 @@ const EditorPage = React.createClass({
  })		
 
 module.exports = EditorPage;
-
-
-<form>
-	<div class="form-group">
-		<label class="control-label " for="message_id">Message</label>
-		<textarea class="form-control" id="message_id" name="message" rows="5"></textarea>
-	</div>
-	
-	<div class="form-group">
-		<button class="btn btn-primary " name="submit" type="submit">Submit</button>
-	</div>
-</form>
