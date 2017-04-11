@@ -9,12 +9,15 @@ body {
 .app-container {
 	min-height: 55rem;
 }
+
 h1 {
 	text-align: center;
 }
+
 .navbar-default {
 	background-color: #a4eff5;
 }
+
 footer {
 	text-align: center;
 	position: relative;
