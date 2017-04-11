@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Oxygen';
 
 body {
-	background-color: pink;
+	background-color: #bdbdbd;
 	font-family: 'Oxygen', sans-serif;
 	height: 100%;
 }
@@ -12,7 +12,9 @@ body {
 h1 {
 	text-align: center;
 }
-
+.navbar-default {
+	background-color: #a4eff5;
+}
 footer {
 	text-align: center;
 	position: relative;
@@ -24,15 +26,15 @@ footer {
 
 form {
 	width: 50%;
-	margin: 0 auto;
+	margin: 10rem auto;
 	text-align: center;
-	background-color: green;
-    padding: 3rem;
+	background-color: #a4eff5;
+    	padding: 3rem;
 }
 
 .footer-nav {
 	list-style: none;
-    display: inline-flex;
+    	display: inline-flex;
 }
 
 .footer-nav li {
@@ -50,16 +52,29 @@ form {
 }
 
 .single-post {
-    background-color: white;
-    min-height: 20rem;
-    margin: 2rem auto;
-    width: 60%;
+    	background-color: white;
+    	min-height: 20rem;
+    	margin: 2rem auto;
+    	width: 60%;
 }
+
+.single-post p {
+    	margin: 0 0 10px;
+    	padding-left: 40px;
+    	padding-right: 40px;
+}
+
 .single-post-title {
 	text-align: center;
-	color: red;
+	color: #3c4c7d;
 	font-size: 2rem;
 }
+
+.single-post-author {
+	font-size: 1.75rem;
+	text-align: center;
+}
+
 .single-post-text {
 	color: black;
 }
